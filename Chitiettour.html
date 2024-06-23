@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chi Tiết Tour Du lịch</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="css/Chitiettour.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body  ng-app ="AppDuLich" ng-controller ="ChitietCtrl">
+    <div class="menu">
+        <div class="logo"><img src="IMG/logo.webp" alt=""></div>
+        <div class="travel-menu">
+            <ul>
+                <li><a href="">Du Lịch</a></li>
+                <li><a href="">Vietravel MICE</a></li>
+                <li><a href="">Vận Chuyển</a></li>
+                <li><a href="">Tin Tức</a></li>
+                <li><a href="">Khuyến Mãi</a></li>
+                <li><a href="">VietravelPlus</a></li>
+                <li><a href="">Liên Hệ</a></li>
+            </ul>
+        </div>
+        <div class="travel-search">
+            <input type="text" name="serch" placeholder="Bắt Đầu Tìm Kiếm">
+            <a class="search-btn" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <ul class="breadcrumbs__wrapper">
+                <li><a href="">Du lịch »
+                    </a></li>
+                <li><a href="">Du lịch trong nước »
+                    </a></li>
+                <li><a href="">Tour Miền Bắc »
+                    </a></li>
+                <li><a href="">Du Lịch Lào Cai »
+                    </a></li>
+                <li><a href="">{{tour.tieudetour}} »
+                    </a></li>
+            </ul>
+        </div>
+        <div class="tour-detail">
+            <div class="entry-head">
+                <div class="div-1">
+                    <div class="tour_title">
+                        <div class="tour__id">
+                            <i class="fa-solid fa-ticket"></i>
+                            <label for="">NDSGN1861-022-121123VU-V</label>
+                        </div>
+                        <h1>{{tour.tieudetour}}</h1>
+                        <div class="tour__Evaluate">
+                            <span class="score">9</span>
+                            <div class="comment">
+                                <p>Tuyệt vời</p>
+                                <p>358 Quan tâm</p>
+                            </div>
+                            <div class="heart">
+                                <i class="fa-solid fa-heart"></i>
+                                <label for="">126</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour_price">
+                        <div class="price">
+                            <div class="sale-price">
+                                <p><span class="price">{{tour.gia}}₫</span>/ khách</p>
+                            </div>
+                        </div>
+                        <div class="group-add-cart">
+                            <a class="datngay" href="">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <label for="">Đặt ngay</label>
+                            </a>
+                            <a class="lienhe" href="">
+                                <label for="">Liên hệ tư vấn</label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-2">
+                    <div class="item1">
+                        <img src="{{tour.anhdaidien}}" alt="">
+                    </div>
+                    <div class="item2">
+                        <div class="item2_1">
+                            <img src="IMG/Langbac.jpg" alt="">
+                        </div>
+                        <div class="item2_2">
+                            <img src="IMG/Tau.jpg" alt="">
+                        </div>
+                        <div class="item2_3">
+                            <img src="IMG/Cau.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="div-3">
+                    <div class="box-order">
+                        <div class="box_1">
+                            <div class="time">
+                                <p>
+                                    Khởi hành <b>12/11/2023 - Giờ đi: 17:45</b>
+                                </p>
+                                <p>
+                                    Tập trung <b>15:45 ngày 12/11/2023</b>
+                                </p>
+                                <p>
+                                    Thời gian <b>{{tour.songaydi}}</b>
+                                </p>
+                                <p>
+                                    Nơi khởi hành <b>{{tour.noikhoihanh}}</b>
+                                </p>
+                                <p>
+                                    Số chỗ còn nhận <b>{{tour.sochoconnhan}}</b>
+                                </p>
+                            </div>
+                            <div class="calendar">
+                                <div class="calendar-box">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <a href="">Ngày khác</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-support">
+                            <label for="">Quý khách cần hỗ trợ?</label>
+                            <div class="box-boder">
+                                <div class="group-contact">
+                                    <a class="contact_1" href="">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <p>Gọi miễn phí <br> qua internet</p>
+                                    </a>
+                                    <a class="contact_2" href="">
+                                        <i class="fa-regular fa-envelope"></i>
+                                        <p>Gửi yêu cầu <br> hỗ trợ ngay</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon__grid">
+                        <div class="item_icon1 icon">
+                            <img src="IMG/iconn1.webp" alt="">
+                            <label for="">Thời gian</label>
+                            <p>7 ngày 6 đêm</p>
+                        </div>
+                        <div class="item_icon2 icon">
+                            <img src="IMG/iconn2.webp" alt="">
+                            <label for="">Phương tiện di chuyển</label>
+                            <p>Máy bay, Xe du lịch</p>
+                        </div>
+                        <div class="item_icon3 icon">
+                            <img src="IMG/iconn3.webp" alt="">
+                            <label for="">Điểm tham quan</label>
+                            <p>Hà Nội, Sapa, Bản Cát Cát, Fansipan, Hạ Long, Động Thiên Cung, Yên Tử, KDL Tràng An, Bái
+                                Đính</p>
+                        </div>
+                        <div class="item_icon4 icon">
+                            <img src="IMG/iconn4.webp" alt="">
+                            <label for="">Ẩm thực</label>
+                            <p>Buffet sáng, Theo thực đơn</p>
+                        </div>
+                        <div class="item_icon5 icon">
+                            <img src="IMG/iconn5.webp" alt="">
+                            <label for="">Khách sạn</label>
+                            <p>Khách sạn 3 sao
+                            </p>
+                            <p> Khánh sạn 4 sao</p>
+                        </div>
+                        <div class="item_icon6 icon">
+                            <img src="IMG/iconn6.webp" alt="">
+                            <label for="">Thời gian lý tưởng</label>
+                            <p>Quanh năm</p>
+                        </div>
+                        <div class="item_icon7 icon">
+                            <img src="IMG/iconn7.webp" alt="">
+                            <label for="">Đối tượng thích hợp</label>
+                            <p>Gia đình nhiều thế hệ, Thanh niên</p>
+                        </div>
+                        <div class="item_icon8 icon">
+                            <img src="IMG/iconn8.webp" alt="">
+                            <label for="">Ưu đãi</label>
+                            <p>Đã bao gồm trong giá tour</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slick">
+            <div class="title">
+                <h2>Những địa điểm tham quan</h2>
+            </div>
+            <div class="slick-list">
+                <div class="slickimg"><img src="IMG/slick1.webp" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick2.jpg" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick3.jpg" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick4.jpg" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick5.jpg" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick6.jpg" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick7.webp" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick8.jpg" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick10.jpg" alt=""></div>
+                <div class="slickimg"><img src="IMG/slick9.jpg" alt=""></div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <div class="schedule">
+            <div class="title">
+                <h2>Lịch Trình</h2>
+            </div>
+            <div class="box-boder_2">
+                <div class="box_time">
+                    <div class="box_left">
+                        <div class="go-tour">
+                            <div class="day day-01" ng-repeat="x in lichtrinh" >
+                                <div class="wrapper">
+                                    <span class="date-left"> Ngày </span>
+                                    <span class="date-center active">{{x.ngay}}</span>
+                                    <span class="date-right">
+                                        <span class="date">16/11/2023</span>
+                                        <span class="location">{{x.tieude}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_chitiet">
+                    <div class="box_right">
+                        <div class="timeline-section">
+                            <div ng-repeat="x in lichtrinh">
+                                <h3 id="day-01">Ngày {{x.ngay}} - {{x.tieude}}</h3>
+                                <div class="excerpt">
+                                    <span class="line"></span>
+                                    <title></title>
+                                    <div style="text-align:justify">
+                                        <div>
+                                            <div style="text-align:justify">{{x.mota}}</div>
+                                            <div style="text-align:right"><br>
+                                                <strong>Nghỉ đêm tại Hà Nội.</strong><br>
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bill">
+            <div class="bill_left">
+                <h2>Chi tiết tour</h2>
+                <div style="padding-right: 10px;">
+                    <div class="detail-tour">
+                        <h3 class="tt">Thông tin chuyến bay</h3>
+                        <div class="backtohome">
+                            <div class="detail-tour-inner goto ">
+                                <div class="date">
+                                    <span>Ngày đi -</span> <b>{{tour.ngaythangnam | dateFormat}}</b>
+                                </div>
+                                <div class="from d-flex justify-content-between align-items-center col-12">
+                                    <span class="col-md-4 small text-center">TP. HỒ CHÍ MINH </span>
+                                    <div class="row col-md-4">
+                                        <img src="https://media.travel.com.vn/ImageAirlines/logo_VIETRAVELAIRLINES.png"
+                                            class="flight-logo" alt="image" onerror="this.className=quot;d-none&quot;">
+                                    </div>
+                                    <span class="col-md-4 small text-center">HANOI </span>
+                                </div>
+                                <div class="from d-flex justify-content-between align-items-center col-12">
+                                    <div class="col-md-4 small text-center">(SGN)</div>
+                                    <div class="row col-md-4">
+                                    </div>
+                                    <div class="col-md-4 small text-center">(DELETE)</div>
+                                </div>
+                                <div class="timee">
+                                    17:45
+                                    <span>&nbsp;</span>
+                                    19:45
+                                </div>
+                                <div class="p-line">
+                                    <span><img src="IMG/go.webp" alt="image"></span>
+                                    <span><img src="IMG/plane.webp" alt="image"></span>
+                                    <span><img src="IMG/to.webp" alt="image"></span>
+                                </div>
+                                <div class="cb">
+                                    Ký hiệu chuyến bay
+                                    <p>VU780</p>
+                                </div>
+                            </div>
+                            <div class="detail-tour-inner comeback">
+                                <div class="date">
+                                    <span>Ngày về -</span> <b>{{tourdetail.ngayketthuc | dateFormat}}</b>
+                                </div>
+                                <div class="from d-flex justify-content-between align-items-center col-12">
+                                    <span class="col-md-4 small text-center">HANOI </span>
+                                    <div class="row col-md-4">
+                                        <img src="https://media.travel.com.vn/ImageAirlines/logo_VIETRAVELAIRLINES.png"
+                                            class="flight-logo" alt="image" onerror="this.className=quot;d-none&quot;">
+                                    </div>
+                                    <span class="col-md-4 small text-center">TP. HỒ CHÍ MINH </span>
+                                </div>
+                                <div class="from d-flex justify-content-between align-items-center col-12">
+                                    <div class="col-md-4 small text-center">(DELETE)</div>
+                                    <div class="row col-md-4">
+                                    </div>
+                                    <div class="col-md-4 small text-center">(SGN)</div>
+                                </div>
+                                <div class="time">
+                                    20:55
+                                    <span>&nbsp;</span>
+                                    22:55
+                                </div>
+                                <div class="p-line">
+                                    <span><img src="IMG/go.webp" alt="image"></span>
+                                    <span><img src="IMG/plane.webp" alt="image"></span>
+                                    <span><img src="IMG/to.webp" alt="image"></span>
+                                </div>
+                                <div class="cb">
+                                    Ký hiệu chuyến bay
+                                    <p>VU787</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-info more-info-1 mt-5">
+                            <h3 class="tt">Thông tin tập trung</h3>
+                            <div class="block">
+                                <span>Ngày giờ tập trung</span>
+                                <div class="info">
+                                    15:45 <p>16/11/2023</p>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <span>Nơi tập trung</span>
+                                <div class="info">
+                                    {{tourdetail.thongtintaptrung}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bill_right">
+                <h2 style="padding: 0 10px;">Giá tour & phụ thu phòng đơn</h2>
+                <div style="padding: 0 10px;margin-bottom: 30px;">
+                    <div class="table-price">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th class="l1">Loại khách</th>
+                                    <th class="l2">Giá tour </th>
+                                    <th class="l3  d-none ">Land tour</th>
+                                </tr>
+                                <tr>
+                                    <td>Người lớn (Từ 12 tuổi trở lên)</td>
+                                    <td class="t-price">{{tour.gia}}đ</td>
+                                    <td class="l-price  d-none ">0 đ</td>
+                                </tr>
+                                <tr>
+                                    <td>Trẻ em (Từ 5 - 11 tuổi)</td>
+                                    <td class="t-price">{{tour.giatreem}}đ</td>
+                                    <td class="l-price  d-none ">0 đ</td>
+                                </tr>
+                                <tr>
+                                    <td>Trẻ nhỏ (Từ 2 - 4 tuổi)</td>
+                                    <td class="t-price">{{tour.giatrenho}} đ</td>
+                                    <td class="l-price  d-none ">0 đ</td>
+                                </tr>
+                                <tr>
+                                    <td>Em bé ( Dưới 2 tuổi )</td>
+                                    <td class="t-price">{{tour.giaembe}}đ</td>
+                                    <td class="l-price  d-none ">0 đ</td>
+                                </tr>
+                                <tr class="total">
+                                    <td>Phụ thu phòng đơn</td>
+                                    <td class="t-price">0 đ</td>
+                                    <td class="l-price  d-none ">0 đ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <h2 style="padding-left: 10px;">Thông tin hướng dẫn viên</h2>
+                <div class="table-price">
+                    <div class="more-info more-info-2">
+                        <div class="block">
+                            <span>HDV dẫn đoàn</span>
+                            <div id="divThongTinHDV">
+                                <div class="info" style="width:100%">
+                                    <p>{{tourdetail.thongtinhuongdanvien}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <span>HDV tiễn</span>
+                            <div id="divThongTinHDVTien">
+                                <div class="info" style="width:100%">
+                                    <p>{{tourdetail.thongtinhuongdanvien}}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note">
+            <h2>Những thông tin cần lưu ý</h2>
+            <div class="faqs">
+                <div class="note_item">
+                    <h3>Giá tour bao gồm</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Giá tour không bao gồm</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Giá vé trẻ em</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Điều kiện thanh toán</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Liên hệ</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Các điều kiện khi đăng ký tour</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Lưu ý khi chuyển/hủy tour</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Các điều kiện hủy tour đối với ngày thường</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Các điều kiện hủy tour đối với ngày lễ, Tết</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="note_item">
+                    <h3>Trường hợp bất khả kháng</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+        <div class="favourite">
+            <h2>Có thể Quý khách sẽ thích</h2>
+            <div class="favourite_item">
+                <div class="tour_item">
+                    <div class="tour_img">
+                        <img src="IMG/hagiang.jpg" alt="">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>9</span>
+                    </div>
+                    <div class="card-body">
+                        <p>10/02/2024 - Giờ đi: 09:00</p>
+                        <h3>Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - Biển Mỹ Khê - Hội An - Đà Nẵng - Tặng vé Show Ký Ức
+                            Hội An (Khách sạn tương đương 4*) - Mùng 1 Tết</h3>
+                        <p>Nơi khởi hành TP. Hồ Chí Minh</p>
+                        <div class="sale-price">
+                            <span class="price">9,790,000 ₫</span>
+                        </div>
+                        <div class="tour-item__price--current">
+                            <div class="btn-book">
+                                <a id="btnDatNgay"
+                                    href="/Booking/TourBooking?tourId=eefabbc1-ffaf-419e-a6fb-2a004f06da2c"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="icon icon--shopping p-1"></i><label>Đặt ngay</label>
+                                </a>
+                            </div>
+                            <div class="btn-bloc">
+                                <a href="/tourNDSGN302-007-100224VN-D/da-nang-ba-na-cau-vang-son-tra-bien-my-khe-hoi-an-da-nang-tang-ve-show-ky-uc-hoi-an-khach-san-tuong-duong-4sao-mung-1-tet.aspx"
+                                    title="Xem chi tiết" class="btn product-item__summary__btn-login">
+                                    <label>
+                                        Xem chi tiết
+                                    </label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour_item">
+                    <div class="tour_img">
+                        <img src="IMG/hagiang.jpg" alt="">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>9</span>
+                    </div>
+                    <div class="card-body">
+                        <p>10/02/2024 - Giờ đi: 09:00</p>
+                        <h3>Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - Biển Mỹ Khê - Hội An - Đà Nẵng - Tặng vé Show Ký Ức
+                            Hội An (Khách sạn tương đương 4*) - Mùng 1 Tết</h3>
+                        <p>Nơi khởi hành TP. Hồ Chí Minh</p>
+                        <div class="sale-price">
+                            <span class="price">9,790,000 ₫</span>
+                        </div>
+                        <div class="tour-item__price--current">
+                            <div class="btn-book">
+                                <a id="btnDatNgay"
+                                    href="/Booking/TourBooking?tourId=eefabbc1-ffaf-419e-a6fb-2a004f06da2c"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="icon icon--shopping p-1"></i><label>Đặt ngay</label>
+                                </a>
+                            </div>
+                            <div class="btn-bloc">
+                                <a href="/tourNDSGN302-007-100224VN-D/da-nang-ba-na-cau-vang-son-tra-bien-my-khe-hoi-an-da-nang-tang-ve-show-ky-uc-hoi-an-khach-san-tuong-duong-4sao-mung-1-tet.aspx"
+                                    title="Xem chi tiết" class="btn product-item__summary__btn-login">
+                                    <label>
+                                        Xem chi tiết
+                                    </label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour_item">
+                    <div class="tour_img">
+                        <img src="IMG/hagiang.jpg" alt="">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>9</span>
+                    </div>
+                    <div class="card-body">
+                        <p>10/02/2024 - Giờ đi: 09:00</p>
+                        <h3>Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - Biển Mỹ Khê - Hội An - Đà Nẵng - Tặng vé Show Ký Ức
+                            Hội An (Khách sạn tương đương 4*) - Mùng 1 Tết</h3>
+                        <p>Nơi khởi hành TP. Hồ Chí Minh</p>
+                        <div class="sale-price">
+                            <span class="price">9,790,000 ₫</span>
+                        </div>
+                        <div class="tour-item__price--current">
+                            <div class="btn-book">
+                                <a id="btnDatNgay"
+                                    href="/Booking/TourBooking?tourId=eefabbc1-ffaf-419e-a6fb-2a004f06da2c"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="icon icon--shopping p-1"></i><label>Đặt ngay</label>
+                                </a>
+                            </div>
+                            <div class="btn-bloc">
+                                <a href="/tourNDSGN302-007-100224VN-D/da-nang-ba-na-cau-vang-son-tra-bien-my-khe-hoi-an-da-nang-tang-ve-show-ky-uc-hoi-an-khach-san-tuong-duong-4sao-mung-1-tet.aspx"
+                                    title="Xem chi tiết" class="btn product-item__summary__btn-login">
+                                    <label>
+                                        Xem chi tiết
+                                    </label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour_item">
+                    <div class="tour_img">
+                        <img src="IMG/hagiang.jpg" alt="">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>9</span>
+                    </div>
+                    <div class="card-body">
+                        <p>10/02/2024 - Giờ đi: 09:00</p>
+                        <h3>Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - Biển Mỹ Khê - Hội An - Đà Nẵng - Tặng vé Show Ký Ức
+                            Hội An (Khách sạn tương đương 4*) - Mùng 1 Tết</h3>
+                        <p>Nơi khởi hành TP. Hồ Chí Minh</p>
+                        <div class="sale-price">
+                            <span class="price">9,790,000 ₫</span>
+                        </div>
+                        <div class="tour-item__price--current">
+                            <div class="btn-book">
+                                <a id="btnDatNgay"
+                                    href="/Booking/TourBooking?tourId=eefabbc1-ffaf-419e-a6fb-2a004f06da2c"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="icon icon--shopping p-1"></i><label>Đặt ngay</label>
+                                </a>
+                            </div>
+                            <div class="btn-bloc">
+                                <a href="/tourNDSGN302-007-100224VN-D/da-nang-ba-na-cau-vang-son-tra-bien-my-khe-hoi-an-da-nang-tang-ve-show-ky-uc-hoi-an-khach-san-tuong-duong-4sao-mung-1-tet.aspx"
+                                    title="Xem chi tiết" class="btn product-item__summary__btn-login">
+                                    <label>
+                                        Xem chi tiết
+                                    </label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/chitiet.js"></script>
+    <script src="js/global.js"></script>
+</body>
+
+</html>

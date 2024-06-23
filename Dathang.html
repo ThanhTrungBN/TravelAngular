@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng</title>
+    <link rel="stylesheet" href="css/Dathang.css">
+    <link rel="stylesheet" href="js/global.js">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+</head>
+
+<body ng-app="AppDulich" ng-controller="ChitietCtrl">
+    <div class="menu">
+        <div class="logo"><img src="IMG/logo.webp" alt=""></div>
+        <div class="travel-menu">
+            <ul>
+                <li><a href="">Du Lịch</a></li>
+                <li><a href="">Vietravel MICE</a></li>
+                <li><a href="">Vận Chuyển</a></li>
+                <li><a href="">Tin Tức</a></li>
+                <li><a href="">Khuyến Mãi</a></li>
+                <li><a href="">VietravelPlus</a></li>
+                <li><a href="">Liên Hệ</a></li>
+            </ul>
+        </div>
+
+        <div class="travel-search">
+            <input type="text" name="serch" ng-model="tieudetour"
+                placeholder="Bắt Đầu Tìm Kiếm">
+            <a class="search-btn" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    </div>
+    <div>
+        <section>
+            <div class="row">
+                <ul class="head col-12">
+                    <li class="checked">1. Nhập thông tin</li>
+                    <li class="checked"><i class="fal fa-angle-right"></i></li>
+                    <li>2. Thanh toán</li>
+                </ul>
+            </div>
+        </section>
+        <section style="margin-bottom: 50px;">
+            <div class="wrapper">
+                <div class="product-item">
+                    <div class="row_1">
+                        <div class="product-item__image">
+                            <img src="{{tour.anhdaidien}}" alt="">
+                        </div>
+                        <div class="product-item_body">
+                            <div class="product-item__detail__category">
+                                <a ng-bind="tour.matour" href="">{{tour.matour}}</a>
+                            </div>
+                            <h5 class="product-item__detail__title">
+                                <a href="">
+                                    {{tour.tieudetour}}
+                                </a>
+                            </h5>
+                            <div class="product-item__detail_icon">
+                                <div class="d-inline-block">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="card_text">
+                                <small>Vé máy bay khứ hồi Vietravel Airlines + Phòng Tiêu chuẩn + Ăn sáng</small>
+                            </p>
+                            <div class="product-item__detail__review">
+                                <div class="product-item__detail__review--point">
+                                    <span>10</span>
+                                </div>
+                                <div class="product-item__detail__review--feedback">
+                                    <span>Tuyệt Vời</span>
+                                </div>
+                            </div>
+                            <div class="product-item__detail_location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>
+                                    1H1 Nguyễn Thị Định, Nguyễn Văn Cừ, Thành phố Quy Nhơn, Quy Nhon, Binh Dinh, Viet
+                                    Nam
+                                </p>
+                            </div>
+                        </div>
+                        <div class="roduct-item__summary">
+                            <div class="roduct-item__summary__footer">
+                                <div class="price-min">Giá Chỉ Từ</div>
+                                <div class="product-item__summary__price">
+                                    <span class="product-item__summary__price--current__number">{{tour.gia}}₫ </span>
+                                    <span class="product-item__summary__price--current__text">/Khách</span>
+                                </div>
+                                <p class="card-text">
+                                    Ngày đi 29/10/2023
+                                </p>
+                                <div class="mb-3">
+                                    <div class="col6">
+                                        <div class="product-item__summary__btn-ngaykhac">Ngày Khác</div>
+                                    </div>
+                                    <div class="col6">
+                                        <div class="product-item__summary__btn-datngay">Đặt Ngày</div>
+                                    </div>
+                                </div>
+                                <p class="btn-promotion">Đã Bao Gồm Trong Giá</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="wrapper">
+                <div class="wrapper_left">
+                    <h2 style="margin-bottom: 30px;">Tổng quan chuyến đi</h2>
+                    <h3 style="margin-bottom: 20px;">Thông tin liên lạc</h3>
+                    <div class="customer-contact">
+                        <form class="customer-contact-inner" action="#" method="get" id="form">
+                            <div class="name"><label>Họ và Tên <b>*</b></label><input autocomplete="off" type="text"
+                                    class="form-control" name="fullName" value=""></div>
+                            <div class="mail"><label>Email <b>*</b></label><input type="email" class="form-control"
+                                    name="email" value=""></div>
+                            <div class="phone"><label>Số điện thoại <b>*</b></label><input type="number"
+                                    class="form-control" name="phone" value=""></div>
+                            <div class="addess"><label>Địa chỉ</label><input type="text" class="form-control"
+                                    name="address" value=""></div>
+                        </form>
+                    </div>
+                    <div class="customer">
+                        <h3>Hành khách</h3>
+                        <div class="change">
+                            <div class="change-title">
+                                <h4>Người lớn</h4>
+                                <p>Từ 12 tuổi</p>
+                            </div>
+                            <div class="change-number">
+                                <span class="minus btn-click" ng-click="updateQuantity('adult', -1)">
+                                    <i class="fa-solid fa-minus"></i>
+                                </span>
+                                <span class="number" id="adult">{{ price.adult.quantity }}</span>
+                                <span class="plus btn-click" ng-click="updateQuantity('adult', 1)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="change">
+                            <div class="change-title">
+                                <h4>Trẻ em</h4>
+                                <p>Từ 5 - 11 tuổi</p>
+                            </div>
+                            <div class="change-number">
+                                <span class="minus btn-click" ng-click="updateQuantity('children', -1)">
+                                    <i class="fa-solid fa-minus"></i>
+                                </span>
+                                <span class="number" id="children">{{ price.children.quantity }}</span>
+                                <span class="plus btn-click" ng-click="updateQuantity('children', 1)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="change">
+                            <div class="change-title">
+                                <h4>Trẻ nhỏ</h4>
+                                <p>Từ 2 - 4 tuổi</p>
+                            </div>
+                            <div class="change-number"><span ng-click="updateQuantity('smallchildren', -1)"
+                                    class="minus btn-click"><i class="fa-solid fa-minus"></i></span><span class="number"
+                                    id="smallchildren">{{ price.smallchildren.quantity }}</span><span ng-click="updateQuantity('smallchildren', 1)"
+                                    class="plus btn-click"><i class="fa-solid fa-plus"></i></span></div>
+                        </div>
+                        <div class="change">
+                            <div class="change-title">
+                                <h4>Em bé</h4>
+                                <p>Từ 0 - 2 tuổi</p>
+                            </div>
+                            <div class="change-number"><span ng-click="updateQuantity('baby', -1)"
+                                    class="minus btn-click"><i class="fa-solid fa-minus"></i></span><span class="number"
+                                    id="baby">{{ price.baby.quantity }}</span><span ng-click="updateQuantity('baby', 1)" class="plus btn-click"><i
+                                        class="fa-solid fa-plus"></i></i></span></div>
+                        </div>
+                    </div>
+                    <div class="customer-notice">
+                        <div class="customer-notice-left">. Người lớn sinh trước ngày<b class="mx-1">31/12/2011</b><br>.
+                            Trẻ nhỏ sinh từ<b class="mx-1">01/01/2019</b> đến<b class="mx-1">31/12/2021</b></div>
+                        <div class="customer-notice-right">. Trẻ em sinh từ<b class="mx-1">01/01/2012</b>đến<b
+                                class="mx-1">31/12/2018</b><br>. Em bé sinh từ<b class="mx-1">01/01/2022</b>đến<b
+                                class="mx-1">02/01/2024</b></div>
+                    </div>
+                </div>
+                <div class="wrapper_right">
+                    <div class="box-support" style="margin-bottom: 20px;"><label>Quý khách cần hỗ trợ?</label>
+                        <div class="group-contact"><a href="" class="phonee"><i class="icon icon--phone"></i>
+                                <p>Gọi miễn phí <br>qua internet</p>
+                            </a><a href="mailto:info@vietravel.com" class="maill"><i class="icon icon--mail"></i>
+                                <p>Gửi yêu cầu <br>hỗ trợ ngay</p>
+                            </a></div>
+                    </div>
+                    <div class="group-checkout">
+                        <h3>Tóm tắt chuyến đi</h3><span>Dịch vụ tùy chọn <b>Tour trọn gói</b></span>
+                        <p class="package-title">Tour trọn gói <span> (6 khách)</span></p>
+                        <div class="product">
+                            <div class="product-image"><img src="{{tour.anhdaidien}}" class="img-fluid" alt="image">
+                            </div>
+                            <div class="product-content">
+                                <p class="title">{{tour.tieudetour}}</p>
+                                <p>{{tour.matour}}</p>
+                            </div>
+                        </div>
+                        <div class="go-tour">
+                            <div class="start"><i class="fal fa-calendar-minus"></i>
+                                <div class="start-content">
+                                    <h4>Bắt đầu chuyến đi</h4>
+                                    <p class="time">T7, 30 THÁNG 12 NĂM 2023</p>
+                                    <p class="from"></p>
+                                </div>
+                            </div>
+                            <div class="end"><i class="fal fa-calendar-minus"></i>
+                                <div class="start-content">
+                                    <h4>Kết thúc chuyến đi</h4>
+                                    <p class="time">T3, 2 THÁNG 1 NĂM 2024</p>
+                                    <p class="from"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <div class="total">
+                                <h6>Hành Khách</h6>
+                                <span>{{tour.gia}} ₫</span>
+                            </div>
+                            <div class="total">
+                                <p>Số lượng hành khách</p>
+                                <a ng-bind="order.hanhkhach">{{totalSl}}</a>
+                                <p>{{totalSl}}</p>
+                            </div>
+                            <div class="total">
+                                <h6>Mã giảm giá</h6>
+                                <input type="text" placeholder="Thêm Mã">
+                                <Button class="apdung">Áp Dụng</Button>
+                            </div>
+                            <div class="total">
+                                <h5>TỔNG TIỀN <h5>
+                                <h3 ng-bind="order.thanhtien">{{ totalPrice }}</h3>
+                                <h3>{{ totalPrice }}</h3>
+                            </div>
+                            <div class="total" ng-click="addOrder(tour.matour,order.hanhkhach,order.thanhtien,mataikhoan)"><button class="btn btn-primary btn-order">ĐẶT NGAY</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/global.js"></script>
+    <script src="js/Dathang.js"></script>
+  
+
+</body>
+
+</html>

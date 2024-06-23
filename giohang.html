@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/giohang.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/global.js"></script>
+    <title>Giỏ Hàng</title>
+</head>
+<body ng-app="AppDuLich" ng-controller="HomeCtrl">
+    <div class="menu">
+        <div class="logo"><img src="IMG/logo.webp" alt=""></div>
+        <div class="travel-menu">
+            <ul>
+                <li><a href="">Du Lịch</a></li>
+                <li><a href="">Vietravel MICE</a></li>
+                <li><a href="">Vận Chuyển</a></li>
+                <li><a href="">Tin Tức</a></li>
+                <li><a href="">Khuyến Mãi</a></li>
+                <li><a href="">VietravelPlus</a></li>
+                <li><a href="">Liên Hệ</a></li>
+            </ul>
+        </div>
+        <div class="travel-search">
+            <input type="text" name="serch" placeholder="Bắt Đầu Tìm Kiếm">
+            <a class="search-btn" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper_left">
+            <div class="wrapper_info">
+                <div class="info">
+                    <div class="imgme">
+                        <img src="{{nguoidung.anhdaidien}}" alt="">
+                    </div>
+                    <div class="name">
+                        <h5>{{nguoidung.hoten}}</h5>
+                        <small>{{nguoidung.email}}</small>
+                    </div>
+                </div>
+                <div class="profile-links">
+                   <ul class="list-unstyled">
+                        <li class="mb-1">
+                            <a class="active" href="">
+                                Tài Khoản
+                            </a>
+                            <ul class="unstyled">
+                                <li class="mb-1"><a class="rounded " href="">Thông tin cá nhân</a></li>
+                                <li class="mb-1"><a class="rounded " href="">Đổi mật khẩu</a></li>
+                                <li class="mb-1"><a class="rounded " href="">Thông tin thanh toán</a></li>
+                                <li class="mb-1"><a class="rounded " href="">Đăng xuất</a></li>
+                                <li class="mb-1"><a class="rounded " href="">Yêu cầu xóa tài khoản</a></li>
+                             </ul>
+                        </li>
+                        <li class="mb-1"><a class="active" href="">Đơn đặt chỗ</a></li>
+                        <li class="mb-1"><a class="active" href="">Đánh giá của quý khách</a></li>
+                        <li class="mb-1"><a class="active" href="">Yêu thích đã lưu</a></li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper_right">
+            <ul class="tablist">
+                <li><a href="">Tất cả</a></li>
+                <li><a href="">Chờ xác nhận</a></li>
+                <li><a href="">Đã đặt</a></li>
+            </ul>
+            <div class="search">
+                <input type="text" placeholder="Tìm kiếm theo tên tour / Tour code hoặc số booking" name="" id="">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="pills-tabContent">
+                <div class="product-item" ng-repeat="x in listorderid">
+                    <div class="row_1">
+                        <div class="product-item__image">
+                            <img src="{{x.anhdaidien}}" alt="">
+                        </div>
+                        <div class="product-item_body">
+                            <div class="product-item__detail__category">
+                                <a href="">TourCode : {{x.matour}}</a>
+                            </div>
+                            <h5 class="product-item__detail__title">    
+                                <a href="">
+                                    {{x.tieudetour}}
+                                </a>
+                            </h5>
+                            <div class="product-item__detail_icon">
+                                <div class="d-inline-block">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="card_text">
+                                <small>Số Booking : {{x.orderID}}</small>
+                            </p>
+                            <div class="product-item__detail__review">
+                                <div class="product-item__detail__review--point">
+                                    <span>10</span>
+                                </div>
+                                <div class="product-item__detail__review--feedback">
+                                    <span style="">Tuyệt Vời</span>
+                                    <span style="font-size: 15px;padding-top: 6px;"> Nơi khởi hành:{{x.noikhoihanh}}</span>
+                                </div>  
+                            </div>
+                            <div class="product-item__detail_location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>
+                                    1H1 Nguyễn Thị Định, Nguyễn Văn Cừ, Thành phố Quy Nhơn, Quy Nhon, Binh Dinh, Viet Nam
+                                </p>
+                            </div>
+                        </div>
+                        <div class="roduct-item__summary">
+                            <div class="roduct-item__summary__footer">
+                                <div class="price-min">Giá Thanh Toán</div>
+                                <div class="product-item__summary__price">
+                                    <span class="product-item__summary__price--current__number">{{x.thanhtien}}</span>
+                                    <span class="product-item__summary__price--current__text">/{{x.hanhkhach}} Khách</span>
+                                </div>
+                                <p class="card-text">
+                                    Ngày đi {{x.ngaythangnam | dateFormat}} <br>
+                                    {{x.songaydi    }}
+                                </p>
+                                <div class="mb-3">
+                                    <div class="col6"><div class="product-item__summary__btn-ngaykhac">Ngày Khác</div></div>
+                                    <div class="col6"><div class="product-item__summary__btn-datngay">Xem chi tiết</div></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/global.js"></script>
+    <script src="js/giohang.js"></script>
+</body>
+</html>

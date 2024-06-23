@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dangnhap.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Travel | Login</title>
+    <script src="js/global.js"></script>
+
+</head>
+<body ng-app="AppDuLich" ng-controller="HomeCtrl">
+    <div class="box">
+        <div class="container">
+            <div class="top-header">
+                <span>Have an account?</span>
+                <header>Login</header>
+            </div>
+            <div class="input-field">
+                <input ng-model="username" type="text" class="input" placeholder="Tên Đăng Nhập" required>
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-field">
+                <input ng-model="password" type="password" class="input" placeholder="Password" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-field">
+                <input ng-click="submitLogin()" type="submit" class="submit" value="Đăng Nhập">
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <input type="checkbox"  id="check">
+                    <label for="check">Nhớ Mật Khẩu</label>
+                </div>
+                <div class="right">
+                    <label><a href="#">Quên Mật Khẩu?</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/dangnhap.js"></script>
+    
+</body>
+</html>

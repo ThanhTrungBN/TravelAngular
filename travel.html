@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="css/travel.css">
+    <script src="js/global.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="AppDuLich" ng-controller="HomeCtrl">
+    <div class="menu">
+        <div class="logo"><img src="IMG/logo.webp" alt=""></div>
+        <div class="travel-menu">
+            <ul>
+                <li class="submenu-parent" >
+                    <a href="">Du Lịch</a>
+                    <div class="full">
+                        <div class="py-lg-5"><a href="Tour.html">Du Lịch Trong Nước</a></div>
+                        <div class="col-lg-10">
+                            <div class="tour_grid">
+                                <div style="">
+                                    <div style="flex-wrap: wrap;display: flex;">
+                                        <h6 style="font-size: 15px;color: #2d4271;text-align: center;width: 25%;">TOUR MIỀN BẮC</h6>
+                                        <h6 style="font-size: 15px;color: #2d4271;text-align: center;width: 25%;">TOUR MIỀN TRUNG</h6>
+                                        <h6 style="font-size: 15px;color: #2d4271;text-align: center;width: 25%;">TOUR MIỀN TÂY NAM BỘ</h6>
+                                        <h6 style="font-size: 15px;color: #2d4271;text-align: center;width: 25%;">TOUR MIỀN ĐÔNG NAM BỘ</h6>
+                                    </div>
+                                    <ul style="flex-wrap: wrap;">
+                                        <li ng-repeat="x in listdiadiem" style="text-align: center;width: 25%;line-height: 45px;  box-sizing: border-box;"><a class="menucon"href="">{{x.tendiadiem}}</a></li>
+                                    </ul>
+                                </div>                            
+                            </div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="">Vietravel MICE</a></li>
+                <li><a href="">Vận Chuyển</a></li>
+                <li><a href="">Tin Tức</a></li>
+                <li><a href="">Khuyến Mãi</a></li>
+                <li><a href="">VietravelPlus</a></li>
+                <li><a href="">Liên Hệ</a></li>
+            </ul>
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div class="travel-search">
+                <input type="text" name="serch" placeholder="Bắt Đầu Tìm Kiếm">
+                <a class="search-btn" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            </div>
+            <div class="group-features">
+                <a class="" href=""><i style="font-size: 22px;color: red;" class="fa-solid fa-heart"></i></a>
+                <a class="avt" href=""><img onclick="Laymataikhoan()" src="{{nguoidung.anhdaidien}}" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="travel-container">
+        <div class="background">
+            <img src="IMG/background.webp" alt="">
+        </div>
+        <div class="option">
+            <div class="tablist">
+                <button class="list_1" style="border-radius: 17px;">
+                    <i class="fa-solid fa-car-side"></i>
+                    <p>Tour Du Lịch</p><br>
+                    <p>Trọn Gói</p>
+                </button>
+                <button class="list_2">
+    
+                    <small>2024</small>
+                </button>
+                <button class="list_3">
+                    <i class="fa-solid fa-hotel"></i>
+                    <p>Khách Sạn</p>
+                </button>
+                <button class="list_4">
+                    <i class="fa-solid fa-plane-up"></i>
+                    <p>Vé Máy Bay</p>
+                </button>
+                <button class="list_5">
+                    <i class="fa-solid fa-plane-up"></i>+<i class="fa-solid fa-hotel"></i>
+                    <p>Combo</p>
+                    <br>
+                    <p>Vé Máy Bay + Khách Sạn</p>
+                </button>
+                <button class="list_6">
+                    <i class="fa-solid fa-car-side"></i>+<i class="fa-solid fa-hotel"></i>
+                    <p>Combo</p>
+                    <br>
+                    <p>Xe + Khách Sạn</p>
+                </button>
+                <button class="list_71">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>Tra Cứu Booking</p>
+                </button>
+            </div>
+            <div class="content-tab">
+                <div class="p-4">
+                    <div class="searchbox-tour">
+                        <div class="searchbox-tour__selector">
+                            <ul class="pills-tab">
+                                <li class="l-1">
+                                    <button>Du Lịch Trong Nước</button>
+                                </li> 
+                                <li class="l-2">
+                                    <button>Du Lịch Nước Ngoài</button>
+                                </li>                    
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="searchbox-tour__inbound">
+                       <nav class="searchbox-tour__inbound__nav">
+                        <div class="nav-tabs">
+                            <button>Tour trọn gói</button>
+                            <button>Dịch Vụ Điểm Đến</button>
+                        </div>
+                       </nav>
+                       <div class="nav-tabContent">                           
+                            <form action="">
+                                <div class="travel-p">
+                                    <div class="row">
+                                        <div class="col_1">
+                                            <div class="col_2">
+                                                <div class="flex-shrink-0">
+                                                    <i class="fa-solid fa-location-dot"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <label for="">Điểm Đi</label>
+                                                    <span style="margin-top: 5px;">TP.Hồ Chí Minh</span>
+                                                </div>
+                                            </div>
+                                            <div class="col_2">
+                                                <div class="flex-shrink-0">
+                                                    <i class="fa-solid fa-location-dot"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <label for="">Điểm Đến</label>
+                                                    <span style="margin-top: 5px;">Hãy Chọn Điểm Đến</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       <div class="col_0">
+                                            <div class="col_3">
+                                                <div class="flex-shrink-1">
+                                                    <i class="fa-regular fa-calendar"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <label for="">Ngày Đi</label>
+                                                    <input autocomplete="off" class="form-control input-date-fix hasDatepicker" name="DepartureDate" id="DepartureDate" type="text" value=" 24-10-2023" placeholder="24-10-2023">
+                                                </div>
+                                            </div>
+                                       </div>
+                                       <div class="col_0">
+                                            <div class="col_3">
+                                                <div class="flex-shrink-1">
+                                                    <i class="fa-regular fa-calendar"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <label for="">Ngày Đi</label>
+                                                    <input autocomplete="off" class="form-control input-date-fix hasDatepicker" name="DepartureDate" id="DepartureDate" type="text" value=" 24-10-2023" placeholder="24-10-2023">
+                                                </div>
+                                            </div>
+                                       </div>
+                                       <div class="col_0">
+                                            <div class="col_4">
+                                                <div class="flex-shrink-2">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <label for="">Tìm Kiếm</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container_full">
+        <section class="home-page">
+            <h4 class="home-page__title">ƯU ĐÃI</h4>
+            <div class="wrapper">
+                <i class="fa-solid fa-angle-left"></i>
+                <ul class="carousel">
+                    <li class="card">
+                        <div class="img">
+                            <img src="IMG/slide1.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="IMG/slide2.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="IMG/slide3.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="IMG/slide4.webp" alt="">
+                        </div>
+                    </li>
+                </ul>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </section>
+        <section class="home-page__explore-tour">
+            <h3 class="home-page__title">
+                Khám phá sản phẩm Vietravel
+            </h3>
+            <div class="explore-tour__list">
+                <div class="slick-track">
+                    <div class="tour__item">
+                        <img src="IMG/khampha1.webp" alt="">
+                        <a href="">Tự hào nét Việt: Ưu đãi kích cầu du lịch trong nước</a>
+                    </div>
+                    <div class="tour__item">
+                        <img src="IMG/khampha2.webp" alt="">
+                        <a href="">🍂 Đắm say giữa trời thu khắp thế giới</a>
+                    </div>
+                    <div class="tour__item">
+                        <img src="IMG/khampha3.webp" alt="">
+                        <a href="">Chọn ngay tour Tết Giáp Thìn 2024 cho gia đình</a>
+                    </div>
+                    <div class="tour__item">
+                        <img src="IMG/khampha4.webp" alt="">
+                        <a href="">🥇[ MỚI ] Tour trải nghiệm giới trẻ, sự kiện, thể thao</a>
+                    </div>
+                    <div class="tour__item">
+                        <img src="IMG/khampha5.webp" alt="">
+                        <a href="">✨[ MỚI ] Tour trải nghiệm Cao Cấp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="home-page__last-deal">
+            <h3 class="home-page__title">
+                Ưu Đãi Tour Giờ Chót
+            </h3>
+            <div class="divUuDaiGioChot">
+                <div class="collumm_1" ng-repeat="x in listTouruudai">
+                    <div class="item_">
+                        <img src="{{x.anhdaidien}}" alt="">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="score">9,4</span>
+                        <div class="Evaluate">
+                            <h6>Tuyệt Vời</h6>
+                            <p>358 Quan Tâm</p>
+                        </div>
+                        <span class="bottom_inner">Giờ Chót</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="tour-item__date">{{x.ngaythangnam |dateFormat}}-{{x.songaydi}}</p>
+                        <p class="tour-item__title"><a href="">
+                           {{x.tieudetour}}
+                        </a>
+                        </p>
+                        <div class="tour-item__code">
+                            <div>Mã Tour</div>
+                            <div style="display: flex;align-items: center;">
+                                <i class="fa-solid fa-ticket"></i>
+                                <p style="padding-left: 6px;">
+                                    {{x.matour}}
+                                </p>
+                            </div>
+                        </div>
+                        <p class="tour-item__departure">
+                           Nơi khởi hành : {{x.noikhoihanh}}
+                        </p>
+                        <div class="tour-item__price">
+                           <div class="tour-item__price__wrapper">
+                            <div class="tour-item__price--old">
+                                 Giá 
+                                <span class="tour-item__price--old__number">{{x.gia}}đ</span>
+                            </div>
+                            <div class="tour-item__price--current">
+                                <span class="tour-item__price--current__number">{{x.giasaukhigiam}}₫</span>
+                                <span class="tour-item__price--current__discount">{{x.phantram}}% GIẢM</span>
+                            </div>
+                            <div class="tour-item__price__timer">
+                                <span class="countDownDay">Còn 00 ngày 00:00:00</span>
+                            </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">   
+                        <div class="tour-item__footer__add-to-compare">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <a href=""> Thêm Vào So Sánh </a>
+                        </div>
+                        <div class="tour-item__footer__available-seat">
+                            <span class="tour-item__footer__available-seat--text">Số Chỗ Còn</span>
+                            <span class="tour-item__footer__available-seat--number">{{x.sochoconnhan}}</span>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </section>
+        <div class="home-page__see-all">
+            <a href=""><button>Xem Tất Cả<i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+        <section class="home-page__combo">
+            <h3 class="home-page__title"> Gói Ưu Đãi Đặc Biệt</h3>
+            <div class="divUuDaiDacBiet">
+                <div class="d-none">
+                    <div class="product-item">
+                        <div class="row_1">
+                            <div class="product-item__image">
+                                <img src="IMG/uudai1.webp" alt="">
+                            </div>
+                            <div class="product-item_body">
+                                <div class="product-item__detail__category">
+                                    <a href="">Vé Máy Bay + Khách Sạn</a>
+                                </div>
+                                <h5 class="product-item__detail__title">    
+                                    <a href="">
+                                    Combo Quy Nhơn 3N2Đ: Vé máy bay khứ hồi + Khách sạn  L'Amor Boutique 4 sao (Bao gồm Ăn sáng)
+                                    </a>
+                                </h5>
+                                <div class="product-item__detail_icon">
+                                    <div class="d-inline-block">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="card_text">
+                                    <small>Vé máy bay khứ hồi Vietravel Airlines + Phòng Tiêu chuẩn  + Ăn sáng</small>
+                                </p>
+                                <div class="product-item__detail__review">
+                                    <div class="product-item__detail__review--point">
+                                        <span>10</span>
+                                    </div>
+                                    <div class="product-item__detail__review--feedback">
+                                        <span>Tuyệt Vời</span>
+                                    </div>  
+                                </div>
+                                <div class="product-item__detail_location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>
+                                        1H1 Nguyễn Thị Định, Nguyễn Văn Cừ, Thành phố Quy Nhơn, Quy Nhon, Binh Dinh, Viet Nam
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roduct-item__summary">
+                                <div class="roduct-item__summary__footer">
+                                    <div class="price-min">Giá Chỉ Từ</div>
+                                    <div class="product-item__summary__price">
+                                        <span class="product-item__summary__price--current__number">2,190,000₫ </span>
+                                        <span class="product-item__summary__price--current__text">/Khách</span>
+                                    </div>
+                                    <p class="card-text">
+                                        Ngày đi 29/10/2023  
+                                    </p>
+                                    <div class="mb-3">
+                                        <div class="col6"><div class="product-item__summary__btn-ngaykhac">Ngày Khác</div></div>
+                                        <div class="col6"><div class="product-item__summary__btn-datngay">Đặt Ngày</div></div>
+                                    </div>
+                                    <p class="btn-promotion">Đã Bao Gồm Trong Giá</p>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="product-item">
+                        <div class="row_1">
+                            <div class="product-item__image">
+                                <img src="IMG/uudai1.webp" alt="">
+                            </div>
+                            <div class="product-item_body">
+                                <div class="product-item__detail__category">
+                                    <a href="">Vé Máy Bay + Khách Sạn</a>
+                                </div>
+                                <h5 class="product-item__detail__title">    
+                                    <a href="">
+                                    Combo Quy Nhơn 3N2Đ: Vé máy bay khứ hồi + Khách sạn  L'Amor Boutique 4 sao (Bao gồm Ăn sáng)
+                                    </a>
+                                </h5>
+                                <div class="product-item__detail_icon">
+                                    <div class="d-inline-block">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="card_text">
+                                    <small>Vé máy bay khứ hồi Vietravel Airlines + Phòng Tiêu chuẩn  + Ăn sáng</small>
+                                </p>
+                                <div class="product-item__detail__review">
+                                    <div class="product-item__detail__review--point">
+                                        <span>10</span>
+                                    </div>
+                                    <div class="product-item__detail__review--feedback">
+                                        <span>Tuyệt Vời</span>
+                                    </div>  
+                                </div>
+                                <div class="product-item__detail_location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>
+                                        1H1 Nguyễn Thị Định, Nguyễn Văn Cừ, Thành phố Quy Nhơn, Quy Nhon, Binh Dinh, Viet Nam
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roduct-item__summary">
+                                <div class="roduct-item__summary__footer">
+                                    <div class="price-min">Giá Chỉ Từ</div>
+                                    <div class="product-item__summary__price">
+                                        <span class="product-item__summary__price--current__number">2,190,000₫ </span>
+                                        <span class="product-item__summary__price--current__text">/Khách</span>
+                                    </div>
+                                    <p class="card-text">
+                                        Ngày đi 29/10/2023  
+                                    </p>
+                                    <div class="mb-3">
+                                        <div class="col6"><div class="product-item__summary__btn-ngaykhac">Ngày Khác</div></div>
+                                        <div class="col6"><div class="product-item__summary__btn-datngay">Đặt Ngày</div></div>
+                                    </div>
+                                    <p class="btn-promotion">Đã Bao Gồm Trong Giá</p>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="product-item">
+                        <div class="row_1">
+                            <div class="product-item__image">
+                                <img src="IMG/uudai1.webp" alt="">
+                            </div>
+                            <div class="product-item_body">
+                                <div class="product-item__detail__category">
+                                    <a href="">Vé Máy Bay + Khách Sạn</a>
+                                </div>
+                                <h5 class="product-item__detail__title">    
+                                    <a href="">
+                                    Combo Quy Nhơn 3N2Đ: Vé máy bay khứ hồi + Khách sạn  L'Amor Boutique 4 sao (Bao gồm Ăn sáng)
+                                    </a>
+                                </h5>
+                                <div class="product-item__detail_icon">
+                                    <div class="d-inline-block">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="card_text">
+                                    <small>Vé máy bay khứ hồi Vietravel Airlines + Phòng Tiêu chuẩn  + Ăn sáng</small>
+                                </p>
+                                <div class="product-item__detail__review">
+                                    <div class="product-item__detail__review--point">
+                                        <span>10</span>
+                                    </div>
+                                    <div class="product-item__detail__review--feedback">
+                                        <span>Tuyệt Vời</span>
+                                    </div>  
+                                </div>
+                                <div class="product-item__detail_location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>
+                                        1H1 Nguyễn Thị Định, Nguyễn Văn Cừ, Thành phố Quy Nhơn, Quy Nhon, Binh Dinh, Viet Nam
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roduct-item__summary">
+                                <div class="roduct-item__summary__footer">
+                                    <div class="price-min">Giá Chỉ Từ</div>
+                                    <div class="product-item__summary__price">
+                                        <span class="product-item__summary__price--current__number">2,190,000₫ </span>
+                                        <span class="product-item__summary__price--current__text">/Khách</span>
+                                    </div>
+                                    <p class="card-text">
+                                        Ngày đi 29/10/2023  
+                                    </p>
+                                    <div class="mb-3">
+                                        <div class="col6"><div class="product-item__summary__btn-ngaykhac">Ngày Khác</div></div>
+                                        <div class="col6"><div class="product-item__summary__btn-datngay">Đặt Ngày</div></div>
+                                    </div>
+                                    <p class="btn-promotion">Đã Bao Gồm Trong Giá</p>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="home-page__destination">
+            <h3 class="home-page__title">Điểm đến yêu thích</h3>
+            <div class="DiemDenYeuThich">
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/HaLong.jpg" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Hạ Long</h5>
+                        <p>Đã có 10,000 lượt khách</p>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/DaNang.webp" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Đà Nẵng</h5>
+                        <p>Đã có 80,779 lượt khách</p>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/DaLat.webp" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Đà Lạt</h5>
+                        <p>Đã có 50,735 lượt khách</p>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/PhuQuoc.webp" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Phú Quốc</h5>
+                        <p>Đã có 78,510 lượt khách</p>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/ChauA.webp" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Châu Á</h5>
+                        <p>Đã có 329,457 lượt khách</p>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/ChauMy.webp" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Châu Mỹ</h5>
+                        <p>Đã có 4,841 lượt khách</p>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/ChauAu.webp" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Châu Âu</h5>
+                        <p>Đã có 15,496 lượt khách</p>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <div class="destination-item__image"><img src="IMG/ChauUc.webp" alt=""></div>
+                    <div class="destination-item__card">
+                        <h5>Châu Úc</h5>
+                        <p>Đã có 6,358 lượt khách</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+       <div class="home-page__why-vietravel">
+            <h3 class="home-page__title">Vì Sao Chọn Vietravel</h3>
+            <div class="home-page__body">
+                <div class="why-item">
+                    <div class="why-img">
+                        <img src="IMG/icon1.png" alt="">
+                    </div>
+                    <h5>Mạng bán tour</h5>
+                    <p>Đầu tiên tại Việt Nam</p>
+                    <p>Ứng dụng công nghệ mới nhất</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-img">
+                        <img src="IMG/icon2.png" alt="">
+                    </div>
+                    <h5>Sản phẩm & Dịch vụ</h5>
+                    <p>ĐĐa dạng – Chất lượng – An toàn</p>
+                  
+                </div>
+                <div class="why-item">
+                    <div class="why-img">
+                        <img src="IMG/icon3.png" alt="">
+                    </div>
+                    <h5>Giá cả</h5>
+                    <p>Luôn có mức giá tốt nhất</p>
+                   
+                </div>
+                <div class="why-item">
+                    <div class="why-img">
+                        <img src="IMG/icon4.png" alt="">
+                    </div>
+                    <h5>Đặt tour</h5>
+                    <p>Dễ dàng & nhanh chóng chỉ với 3 bước</p>
+                 
+                </div>
+                <div class="why-item">
+                    <div class="why-img">
+                        <img src="IMG/icon5.png" alt="">
+                    </div>
+                    <h5>Thanh toán</h5>
+                    <p>An toàn & linh hoạt</p>
+                  
+                </div>
+                <div class="why-item">
+                    <div class="why-img">
+                        <img src="IMG/icon6.png" alt="">
+                    </div>
+                    <h5>Hỗ trợ</h5>
+                    <p>ĐHotline & trực tuyến (08h00 - 22h00)</p>
+                    
+                </div>
+            </div>
+       </div>
+    </div>
+    <footer>
+        <div class="travel_footer">
+            <div class="item1">
+                <div class="footer__row_p">
+                    <h4>Du lịch trong nước</h4>
+                    <div class="footer__menu__item_flex">
+                        <ul class="footer__menu_left">
+                            <li class="footer__menu__item"><a href="">Hà Nội</a></li>
+                            <li class="footer__menu__item"><a href="">Hạ Long</a></li>
+                            <li class="footer__menu__item"><a href="">Huế</a></li>
+                            <li class="footer__menu__item"><a href="">Quảng Bình</a></li>
+                            <li class="footer__menu__item"><a href="">Đà Nẵng</a></li>
+                            <li class="footer__menu__item"><a href="">Quảng Nam</a></li>
+                            <li class="footer__menu__item"><a href="">Nha Trang</a></li>
+                            <li class="footer__menu__item"><a href="">Đà Lạt</a></li>
+                        </ul>
+                        <ul class="footer__menu_right">
+                            <li class="footer__menu__item"><a href="">Phan Thiết</a></li>
+                            <li class="footer__menu__item"><a href="">Bà Rịa - Vũng Tàu</a></li>
+                            <li class="footer__menu__item"><a href="">Phú Quốc</a></li>
+                            <li class="footer__menu__item"><a href="">Cần Thơ</a></li>
+                            <li class="footer__menu__item"><a href="">HÀ TIÊN</a></li>
+                            <li class="footer__menu__item"><a href="">Bắc Kạn</a></li>
+                            <li class="footer__menu__item"><a href="">Hà Giang</a></li>
+                            <li class="footer__menu__item"><a href="">Côn Đảo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item2">
+                <div class="footer__row_p">
+                    <h4>Du lịch Nước Ngoài</h4>
+                    <div class="footer__menu__item_flex">
+                        <ul class="footer__menu_left">
+                            <li class="footer__menu__item"><a href="">Hà Nội</a></li>
+                            <li class="footer__menu__item"><a href="">Hạ Long</a></li>
+                            <li class="footer__menu__item"><a href="">Huế</a></li>
+                            <li class="footer__menu__item"><a href="">Quảng Bình</a></li>
+                            <li class="footer__menu__item"><a href="">Đà Nẵng</a></li>
+                            <li class="footer__menu__item"><a href="">Quảng Nam</a></li>
+                            <li class="footer__menu__item"><a href="">Nha Trang</a></li>
+                            <li class="footer__menu__item"><a href="">Đà Lạt</a></li>
+                        </ul>
+                        <ul class="footer__menu_right">
+                            <li class="footer__menu__item"><a href="">Phan Thiết</a></li>
+                            <li class="footer__menu__item"><a href="">Bà Rịa - Vũng Tàu</a></li>
+                            <li class="footer__menu__item"><a href="">Phú Quốc</a></li>
+                            <li class="footer__menu__item"><a href="">Cần Thơ</a></li>
+                            <li class="footer__menu__item"><a href="">HÀ TIÊN</a></li>
+                            <li class="footer__menu__item"><a href="">Bắc Kạn</a></li>
+                            <li class="footer__menu__item"><a href="">Hà Giang</a></li>
+                            <li class="footer__menu__item"><a href="">Côn Đảo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item3">
+                <div class="footer__row_p">
+                    <h4>Du lịch Nước Ngoài</h4>
+                    <div class="footer__menu__item_flex">
+                        <ul class="footer__menu_left">
+                            <li class="footer__menu__item"><a href="">Hà Nội</a></li>
+                            <li class="footer__menu__item"><a href="">Hạ Long</a></li>
+                            <li class="footer__menu__item"><a href="">Huế</a></li>
+                            <li class="footer__menu__item"><a href="">Quảng Bình</a></li>
+                            <li class="footer__menu__item"><a href="">Đà Nẵng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item4">
+                <div class="footer__row_p">
+                    <h4>Ứng Dụng Di Động</h4>
+                    <div class="footer__menu__item_flex">
+                        <div class="app">
+                            <img src="IMG/ggp.webp" alt="">
+                            <p>Android</p>
+                            <img src="IMG/image42.webp" alt="">
+                        </div>
+                        <div class="app">
+                            <img src="IMG/aps.webp" alt="">
+                            <p>iOS</p>
+                            <img src="IMG/image43.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item5">
+                <div class="footer__row_p">
+                    <h4>Liên Hệ</h4>
+                    <div class="contact-info">                   
+                        190 Pasteur, Phường Võ Thị Sáu, Quận 3, TP.HCM <br>
+                        (+84 28) 3822 8898 <br>
+                        (+84 28) 3829 9142 <br>
+                        info@vietravel.com
+                    </div>
+                    <h4>Mạng Xã Hội</h4>
+                    <ul class="contact__icon">
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-viber"></i></li>
+                        <li><i class="fa-brands fa-youtube"></i></li>
+                    </ul>
+                    <div class="contact-phone">
+                        <p>1900 1839</p>
+                    </div>
+                    <p class="contact_time">Từ 8:00 - 22:00 hàng ngày</p>
+                </div>
+            </div>
+            <div class="item6">
+                <div class="footer__row_p">
+                    <h4>Du lịch Nước Ngoài</h4>
+                    <div class="footer__menu__item_flex">
+                        <ul class="footer__menu_left">
+                            <li class="footer__menu__item"><a href="">Hà Nội</a></li>
+                            <li class="footer__menu__item"><a href="">Hạ Long</a></li>
+                            <li class="footer__menu__item"><a href="">Huế</a></li>
+                            <li class="footer__menu__item"><a href="">Quảng Bình</a></li>
+                            <li class="footer__menu__item"><a href="">Đà Nẵng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item7">
+                <div class="footer__row_p">
+                    <h4>Newsletter</h4>
+                    <div>
+                        <form action="">
+                            <input type="text">
+                            <input type="submit">
+                        </form>
+                    </div>
+                    <h4>Tìm kiếm thông tin</h4>
+                    <div>
+                        <form action="">
+                            <input type="text">
+                            <input type="submit">
+                        </form>
+                    </div>
+                    <div class="securi-payment">
+                        <div class="securi">
+                            <h4>Chứng Nhận</h4>
+                            <div><img src="IMG/image39.webp" alt=""></div>
+                            <div><img src="IMG/image40.webp" alt=""></div>
+                        </div>
+                        <div class="payment">
+                            <h4>Chấp Nhận Thanh Toán</h4>
+                            <img src="IMG/vnpay_qr1_1.webp" alt="">
+                            <img src="IMG/image41.webp" alt="">
+                            <img src="IMG/vs.webp" alt="">
+                            <img src="IMG/mtc.webp" alt="">
+                            <img src="IMG/jcb.webp" alt="">
+                            <img src="IMG/vrvs.webp" alt="">
+                            <img src="IMG/msb.webp" alt="">
+                            <img src="IMG/shopeepay.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Bản quyền của Vietravel ® 2016. Bảo lưu mọi quyền.</p><br>
+            <p>Ghi rõ nguồn "www.travel.com.vn" ® khi sử dụng lại thông tin từ website này.</p><br>
+            <p>Số giấy phép kinh doanh lữ hành Quốc tế: 79-234/2014/TCDL-GP LHQT</p>
+        </div>
+    </footer>
+    <script src="js/travel.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the element that triggers the toggle
+            var duLichLink = document.querySelector('.submenu-parent a');
+
+            // Get the element to show/hide
+            var fullMenu = document.querySelector('.submenu-parent .full');
+
+            // Add click event listener
+            duLichLink.addEventListener('click', function () {
+                // Toggle the visibility of the full menu
+                fullMenu.style.display = (fullMenu.style.display === 'none' || fullMenu.style.display === '') ? 'flex' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

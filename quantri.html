@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css/quantri.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/quantri.js"></script>
+    <script src="js/global.js"></script>
+</head>
+
+<body ng-app="AppDuLich" ng-controller="HomeCtrl">
+    <div class="container">
+        <div class="wrapper_left">
+            <div class="head_left">
+                <i class="fa-solid fa-user"></i>
+                <a href="">Trang Quản Trị</a>
+            </div>
+            <div class="adm">
+                <img src="{{nguoidung.anhdaidien}}" alt="">
+                <a href="">{{nguoidung.hoten}}</a>
+            </div>
+            <div class="fuction">
+                <button>
+                    <i class="fa-solid fa-house"></i>
+                    <a href="">Bảng Điều Khiển</a>
+                </button>
+            </div>
+            <div class="fuction">
+                <button>
+                    <i class="fa-solid fa-list"></i>
+                    <a href="">Danh Mục</a>
+                </button>
+            </div>
+            <div class="fuction">
+                <button>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <a href="">Địa Điểm</a>
+                </button>
+            </div>
+            <div class="fuction">
+                <button>
+                    <i class="fa-solid fa-table-cells-large"></i>
+                    <a href="">Tour</a>
+                </button>
+            </div>
+            <div class="fuction">
+                <button>
+                    <i class="fa-solid fa-file"></i>
+                    <a href="">Danh Sách Đặt Tour</a>
+                </button>
+            </div>
+        </div>
+        <div class="wrapper_right">
+            <div class="menu">
+                <i class="fa-solid fa-list"></i>
+                <div class="admm">
+                    <img src="{{nguoidung.anhdaidien}}" alt="">
+                    <a href="">Admin</a>
+                </div>
+            </div>
+            <div id="tab1">
+                <div class="background">
+                    <div class="head_right">
+                        <h2>Quản Lí Du Lịch</h2>
+                        <a href="">Trang Chủ</a>
+                    </div>
+                    <div class="content">
+                        <div class="grid">
+                            <div class="item1">
+                                <img src="IMG/quantri1.jpg" alt="">
+                                <div class="col">
+                                    <p>Tổng Số Tour</p>
+                                    <span>{{soluongtour}}</span>
+                                </div>
+                            </div>
+                            <div class="item1">
+                                <img src="IMG/quantri2.jpg" alt="">
+                                <div class="col">
+                                    <p>Tour Đã Đặt</p>
+                                    <span>{{soluongorder}}</span>
+                                </div>
+                            </div>
+                            <div class="item1">
+                                <img src="IMG/quantri3.jpg" alt="">
+                                <div class="col">
+                                    <p>Tổng Số Thành Viên</p>
+                                    <span>{{soluongacc}}</span>
+                                </div>
+                            </div>
+                            <div class="item1">
+                                <img src="IMG/quantri4.jpg" alt="">
+                                <div class="col">
+                                    <p>Tổng Số Bài Viết</p>
+                                    <span>7</span>
+                                </div>
+                            </div>
+                            <div class="item1">
+                                <img src="IMG/quantri5.jpg" alt="">
+                                <div class="col">
+                                    <p>Doanh Thu Ngày</p>
+                                    <span>6</span>
+                                </div>
+                            </div>
+                            <div class="item1">
+                                <img src="IMG/quantri5.jpg" alt="">
+                                <div class="col">
+                                    <p>Doanh Thu Tháng</p>
+                                    <span>5</span>
+                                </div>
+                            </div>
+                            <div class="item1">
+                                <img src="IMG/quantri5.jpg" alt="">
+                                <div class="col">
+                                    <p>Doanh Thu Năm</p>
+                                    <span>5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab2">
+                <div class="tour_background">
+                    <div class="tour_header">
+                        <div style="display: flex;padding: 0px 10px;">
+                            <i class="fa-solid fa-house" style="padding: 0px 5px;"></i>
+                            <p> Trang Chủ</p>
+                        </div>/
+                        <div style="display: flex;padding: 0px 10px;">
+                            <p>Bài Viết</p>
+                        </div>/
+                        <div style="display: flex;padding: 0px 10px;">
+                            <p>Danh Sách</p>
+                        </div>
+                    </div>
+                    <div class="boder">
+                        <div class="boder_top">
+                            <p>From Tìm kiếm</p>
+                        </div>
+                        <div class="boder_body">
+                            <div class="boder_body_item">
+                                <input type="text" placeholder="Tiêu Đề Tour">
+                            </div>
+                            <div class="boder_body_item">
+                                <input type="date" placeholder="dd/mm/yy">
+                            </div>
+                            <div class="boder_body_item">
+                                <input type="date" placeholder="dd/mm/yy">
+                            </div>
+                            <div class="boder_body_item">
+                                <button>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <p>Tìm Kiếm</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour_item">
+                        <div class="add">
+                            <button>
+                                <i class="fa-solid fa-plus"></i>
+                                <p>Tạo Mới</p>
+                            </button>
+                        </div>
+                        <div class="tour_table">
+                            <table>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tiêu Đề</th>
+                                    <th>Hình Ảnh</th>
+                                    <th>Lịch trình</th>
+                                    <th>Thông Tin/Địa Điểm</th>
+                                    <th>Trạng Thái</th>
+                                    <th>Hành Động</th>
+                                </tr>
+                                <tr ng-repeat="x in listTourMoi">
+                                    <td>{{x.matour}}</td>
+                                    <td>{{x.tieudetour}}</td>
+                                    <td><img src="{{x.anhdaidien}}" alt=""></td>
+                                    <td>
+                                        <div class="item">
+                                            <p>Khởi hành</p>
+                                            <span>{{x.ngaythangnam|dateFormat}}</span>
+                                        </div>
+                                        <div class="item">
+                                            <p>Thời gian</p>
+                                            <span>4 ngày</span>
+                                        </div>
+                                        <div class="item">
+                                            <p>Số chỗ</p>
+                                            <span>{{x.sochoconnhan}}</span>
+                                        </div>
+                                        <div class="item">
+                                            <p>Giá</p>
+                                            <span>{{x.gia}}₫/ khách</span>
+                                        </div>
+                                        <div class="item">
+                                            <p>Ngày về</p>
+                                            <span>12/12/2023</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="item">
+                                            <p>Địa Điểm</p>
+                                            <span>{{x.madanhmuctour}}</span>
+                                        </div>
+                                        <div class="item">
+                                            <p>Di Chuyển</p>
+                                            <Span>Máy Bay , Tàu</Span>
+                                        </div>
+                                        <div class="item">
+                                            <p>Tập Trung</p>
+                                            <span>
+                                                05:00 09/12/2023</span>
+                                        </div>
+                                        <div class="item">
+                                            <p>Hướng dẫn viên</p>
+                                            <span>Độ Mixi</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="item">
+                                            <p> Khởi Tạo</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i style="color: red;font-size: 18px;padding: 10px;" class="fa-solid fa-trash"
+                                            ng-click="xoatour(x.matour)"></i>
+                                        <i style="color: #0A97BB;font-size: 18px;padding: 10px;"
+                                            class="fa-solid fa-pen"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab3">
+                <div class="addflex">
+                    <div class="add_right">
+                        <div class="ad" style="display: flex;">
+                            <div class="ad">
+                                <p>Tiêu Đề Tour</p>
+                                <input type="text" ng-model="newTour.tieudetour" style="width: 60%;"
+                                    placeholder="Tiêu đề Tour">
+                            </div>
+                            <div class="ad">
+                                <p>Hình Ảnh</p>
+                                <input type="text" ng-model="newTour.anhdaidien" style="width: 80%;">
+                            </div>
+                        </div>
+                        <div class="ad" style="display: flex;">
+                            <div class="ad">
+                                <p>Mã Tour</p>
+                                <input type="text" ng-model="newTour.matour" style="width: 60%;" placeholder="Mã Tour">
+                            </div>
+                            <div class="ad">
+                                <p>Danh mục</p>
+                                <input type="text" ng-model="newTour.danhmucID" style="width: 80%;"
+                                    placeholder="Danh mục" name="" id="danhmucid">
+                            </div>
+                        </div>
+                        <div class="ad" style="display: flex;">
+                            <div class="ad">
+                                <p>Nơi Khởi Hành</p>
+                                <input type="text" ng-model="newTour.noikhoihanh" style="width: 60%;"
+                                    placeholder="Nơi Khởi Hành">
+                            </div>
+                            <div class="ad">
+                                <p>Loại Tour</p>
+                                <input type="text" ng-model="newTour.madanhmuctour" style="width: 80%;"
+                                    placeholder="Danh mục" name="" id="loaitourid">
+                            </div>
+                        </div>
+                        <div class="ad">
+                            <p>Giá Tour</p>
+                            <input type="text" ng-model="newTour.gia" placeholder="Giá Tour" name="" id="giatour">
+                        </div>
+                    </div>
+                    <div class="add_left">
+                        <div class="ad" style="border-bottom: 1px solid #ddd;">
+                            <h4 style="color: #4E6E92;font-size: 22px;">Thời Gian Diễn Ra</h4>
+                        </div>
+                        <div class="ad" style="margin-top: 20px;">
+                            <p>Ngày Bắt Đầu</p>
+                            <input type="date" ng-model="newTour.ngaythangnam" style="width: 50%;"
+                                placeholder="Ngày Bắt Đầu">
+                        </div>
+                        <div class="ad">
+                            <p>Số Ngày Đi</p>
+                            <input type="text" ng-model="newTour.songaydi" style="width: 50% " placeholder="Số Ngày Đi">
+                        </div>
+                        <div class="ad">
+                            <p>Số chỗ</p>
+                            <input type="number" ng-model="newTour.sochoconnhan" placeholder="Số chỗ"
+                                style="width: 50% ">
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <button ng-click="addTour()" style="width: 80px; height: 40px;margin-right: 35px;">Xác
+                                Nhận</button>
+                            <button ng-click="suaTour()" style="width: 80px; height: 40px;">Chỉnh sửa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
